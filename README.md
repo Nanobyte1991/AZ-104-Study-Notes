@@ -19,11 +19,8 @@ This repository contains notes for studying for the AZ-104 exam.
 
 ## Table of Contents
 
-### Prepare for the Exam
-
 - [AZ-104: Prerequisites for Azure Administrators](Notes/AZ-104-Prerequisites-for-Azure-Administrators.md)
-  - **Duration:** 2 hours 44 minutes
-  - **Units:** 5
+  - **Units:**
     - Unit 1: Introduction to Azure
     - Unit 2: Azure Subscriptions and Resource Groups
     - Unit 3: Azure Resource Manager (ARM)
@@ -31,8 +28,7 @@ This repository contains notes for studying for the AZ-104 exam.
     - Unit 5: Azure Governance
 
 - [AZ-104: Manage Identities and Governance in Azure](Notes/AZ-104-Manage-Identities-and-Governance-in-Azure.md)
-  - **Duration:** 4 hours 26 minutes
-  - **Units:** 8
+  - **Units:**
     - Unit 1: Azure Active Directory Overview
     - Unit 2: Users and Groups
     - Unit 3: Azure AD Connect
@@ -43,8 +39,7 @@ This repository contains notes for studying for the AZ-104 exam.
     - Unit 8: Governance and Compliance
 
 - [AZ-104: Configure and Manage Virtual Networks for Azure Administrators](Notes/AZ-104-Configure-and-Manage-Virtual-Networks-for-Azure-Administrators.md)
-  - **Duration:** 7 hours 57 minutes
-  - **Units:** 11
+  - **Units:**
     - Unit 1: Virtual Network Basics
     - Unit 2: Subnets and Address Spaces
     - Unit 3: Network Security Groups (NSGs)
@@ -58,8 +53,7 @@ This repository contains notes for studying for the AZ-104 exam.
     - Unit 11: Application Gateway
 
 - [AZ-104: Implement and Manage Storage in Azure](Notes/AZ-104-Implement-and-Manage-Storage-in-Azure.md)
-  - **Duration:** 4 hours 54 minutes
-  - **Units:** 7
+  - **Units:**
     - Unit 1: Azure Storage Accounts
     - Unit 2: Blob Storage
     - Unit 3: File Storage
@@ -69,8 +63,7 @@ This repository contains notes for studying for the AZ-104 exam.
     - Unit 7: Azure Backup
 
 - [AZ-104: Deploy and Manage Azure Compute Resources](Notes/AZ-104-Deploy-and-Manage-Azure-Compute-Resources.md)
-  - **Duration:** 5 hours 45 minutes
-  - **Units:** 8
+  - **Units:**
     - Unit 1: Virtual Machines (VMs)
     - Unit 2: VM Sizes and Pricing
     - Unit 3: VM Storage and Backup
@@ -81,8 +74,7 @@ This repository contains notes for studying for the AZ-104 exam.
     - Unit 8: Virtual Machine Scale Sets
 
 - [AZ-104: Monitor and Back Up Azure Resources](Notes/AZ-104-Monitor-and-Back-Up-Azure-Resources.md)
-  - **Duration:** 5 hours 24 minutes
-  - **Units:** 8
+  - **Units:**
     - Unit 1: Azure Monitor Overview
     - Unit 2: Log Analytics
     - Unit 3: Application Insights
