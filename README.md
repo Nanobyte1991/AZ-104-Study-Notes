@@ -1,89 +1,138 @@
-# AZ-104 Administrator Associate Study Notes
+# Azure Administrator Study Notes
 
-This repository contains notes for studying for the AZ-104 exam.
+## Learning Modules
 
-## Study Materials and Courses
-
-### Microsoft Learn: Azure Administrator
-- **Certification Path:** [Learn Modules](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?ns-enrollment-type=Collection&ns-enrollment-id=2d5pizzq7e8454&practice-assessment-type=certification)
-- **Time Required:** 31 hours 10 minutes (Approx. 12 days at 2.5 hours per day)
+### Microsoft Learn Modules
+- **Link**: [Learn Modules - Azure Administrator](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?ns-enrollment-type=Collection&ns-enrollment-id=2d5pizzq7e8454&practice-assessment-type=certification)
+- **Estimated Time**: 31 Hours 10 Mins
+- **Study Plan**: 12 Days at 2.5 Hours a Day
 
 ### Pluralsight Course
-- **AZ-104 Microsoft Azure Administrator Certification Prep:** [Pluralsight Course](https://app.pluralsight.com/library/courses/az-104-microsoft-azure-adminstrator-certification-prep/table-of-contents)
-- **Time Required:** 15 hours 5 minutes (Approx. 6 days at 2.5 hours per day)
+- **Link**: [AZ-104 Microsoft Azure Administrator Certification Prep](https://app.pluralsight.com/library/courses/az-104-microsoft-azure-adminstrator-certification-prep/table-of-contents)
+- **Estimated Time**: 15 Hours and 5 Mins
+- **Study Plan**: 6 Days at 2.5 Hours a Day
 
-### Additional Resources
-- **AZ-104 Administrator Associate Study Cram v2**
-  - **Video:** [Watch on YouTube](https://www.youtube.com/watch?v=0Knf9nub4-k&t=12610s)
-  - **Time Required:** 4 hours 1 minute
+### AZ-104 Administrator Associate Study Cram v2
+- **Estimated Time**: 4 Hours 1 Min
 
-## Table of Contents
+## Study Plan
 
-- [AZ-104: Prerequisites for Azure Administrators](Notes/AZ-104-Prerequisites-for-Azure-Administrators.md)
-  - **Units:**
-    - Unit 1: Introduction to Azure
-    - Unit 2: Azure Subscriptions and Resource Groups
-    - Unit 3: Azure Resource Manager (ARM)
-    - Unit 4: Azure Policies and RBAC
-    - Unit 5: Azure Governance
+1. **Complete all Learn Modules**: Include notes for each section.
+2. **Complete Pluralsight Course**: Update notes accordingly.
 
-- [AZ-104: Manage Identities and Governance in Azure](Notes/AZ-104-Manage-Identities-and-Governance-in-Azure.md)
-  - **Units:**
-    - Unit 1: Azure Active Directory Overview
-    - Unit 2: Users and Groups
-    - Unit 3: Azure AD Connect
-    - Unit 4: Azure AD Roles and Permissions
-    - Unit 5: Azure AD Conditional Access
-    - Unit 6: Azure AD B2C
-    - Unit 7: Azure AD Domain Services
-    - Unit 8: Governance and Compliance
+---
 
-- [AZ-104: Configure and Manage Virtual Networks for Azure Administrators](Notes/AZ-104-Configure-and-Manage-Virtual-Networks-for-Azure-Administrators.md)
-  - **Units:**
-    - Unit 1: Virtual Network Basics
-    - Unit 2: Subnets and Address Spaces
-    - Unit 3: Network Security Groups (NSGs)
-    - Unit 4: Azure Firewall
-    - Unit 5: VPN Gateway
-    - Unit 6: ExpressRoute
-    - Unit 7: Azure Bastion
-    - Unit 8: Private Link
-    - Unit 9: Virtual Network Peering
-    - Unit 10: Load Balancer
-    - Unit 11: Application Gateway
+## Azure Administration Section
 
-- [AZ-104: Implement and Manage Storage in Azure](Notes/AZ-104-Implement-and-Manage-Storage-in-Azure.md)
-  - **Units:**
-    - Unit 1: Azure Storage Accounts
-    - Unit 2: Blob Storage
-    - Unit 3: File Storage
-    - Unit 4: Queue Storage
-    - Unit 5: Table Storage
-    - Unit 6: Azure Storage Replication
-    - Unit 7: Azure Backup
+### Azure Resource Manager (ARM)
+- **Definition**: Container that holds all Azure resources. Logical container based on lifecycle, security, and environment.
+- **Structure**:
+  - **Subscription**: Billing unit encompassing all contained resources.
+  - **Resource Group**: Logical grouping of resources within a subscription.
+  - **Resources**: Individual components (e.g., VMs, storage accounts).
 
-- [AZ-104: Deploy and Manage Azure Compute Resources](Notes/AZ-104-Deploy-and-Manage-Azure-Compute-Resources.md)
-  - **Units:**
-    - Unit 1: Virtual Machines (VMs)
-    - Unit 2: VM Sizes and Pricing
-    - Unit 3: VM Storage and Backup
-    - Unit 4: VM Networking
-    - Unit 5: Azure App Services
-    - Unit 6: Azure Functions
-    - Unit 7: Containers and Kubernetes
-    - Unit 8: Virtual Machine Scale Sets
+- **ARM Operations**:
+  - **Dashboard**: Customizable page to view performance and resource stats.
+  - **Cloud Shell**: Allows usage of both Bash and PowerShell; auto-filled region when creating storage mounts. Times out after 20 minutes.
+  - **New Key**: Required when deploying new VMs.
 
-- [AZ-104: Monitor and Back Up Azure Resources](Notes/AZ-104-Monitor-and-Back-Up-Azure-Resources.md)
-  - **Units:**
-    - Unit 1: Azure Monitor Overview
-    - Unit 2: Log Analytics
-    - Unit 3: Application Insights
-    - Unit 4: Azure Security Center
-    - Unit 5: Alerts and Automation
-    - Unit 6: Azure Backup
-    - Unit 7: Azure Site Recovery
-    - Unit 8: Monitoring and Backup Best Practices
+### Using Azure CLI and PowerShell
 
-## Contributing
+- **PowerShell**:
+  - Create Resource Group: `New-AzResourceGroup`
+  - List Resource Groups: `Get-AzResourceGroup`
+  - Save Resource Group to Variable: `$rg = Get-AzResourceGroup`
+  - Create VM:
+    ```powershell
+    Az vm Create `
+    --resource-group $rg.ResourceGroupName `
+    --Location $rg.Location `
+    --name <VMName> `
+    --Image <Image> `
+    --admin-username <Username> `
+    --generate-ssh-keys `
+    --no-wait
+    ```
 
-Feel free to contribute by adding more notes or correcting errors.
+  - List Resources: `Get-AzResource | Format-Table`
+  - Get Cloud Drive Info: `Get-CloudDrive`
+
+- **Azure CLI**:
+  - Create Resource Group: `az group create --name <ResourceGroupName> --location <Location>`
+  - List Resource Groups: `az group list`
+  - Create VM:
+    ```bash
+    az vm create \
+    --resource-group $rg.ResourceGroupName \
+    --location $rg.Location \
+    --name <VMName> \
+    --image <Image> \
+    --admin-username <Username> \
+    --generate-ssh-keys \
+    --no-wait
+    ```
+
+### Using ARM Templates
+
+- **Infrastructure as Code (IaC)**: Deploy environments quickly and consistently.
+- **Components**:
+  - **Parameters**: User-defined values (e.g., VM size).
+  - **Variables**: Hard-coded values.
+  - **Resources**: Definitions of the resources to deploy.
+  - **Outputs**: Return values from the template (e.g., IP addresses).
+
+- **Deployment**:
+  - Via GUI: Templates > Deploy a Custom Template > Paste GitHub template > Visualizer shows deployment plan.
+
+### Governance and Compliance
+
+- **Managing Subscriptions**:
+  - **Subscriptions**: Created for departments to allocate costs.
+  - **Management Groups**: Hierarchical organization for subscriptions and other management groups. Supports up to 6 levels.
+
+- **Azure Policy**:
+  - **Purpose**: Enforce compliance and auditing.
+  - **Types**:
+    - **Policy Definitions**: Define criteria for resources.
+    - **Policy Assignments**: Apply policies at various scopes (management groups, subscriptions, resource groups).
+    - **Initiative Definitions**: Collections of policies to achieve a broader goal.
+  - **Policy Enforcement**: Prevents deployment if criteria are not met (e.g., missing tags).
+
+- **Tagging Resources**:
+  - **Tags**: Name:Value pairs for resource identification and cost management.
+  - **Limits**: Max of 50 tags; value length restrictions vary.
+  - **Application**: Tags must be manually assigned or set via Azure Policy.
+
+- **Locking and Moving Resources**:
+  - **Locks**:
+    - **ReadOnly**: Prevents updates and deletions.
+    - **CanNotDelete**: Prevents deletion but allows read and modify.
+  - **Resource Movement**: Resources can be moved between resource groups and subscriptions, respecting locks.
+
+- **Managing Azure Costs**:
+  - **Subscription Types**: Free, Pay-as-you-go, Enterprise Agreement, Cloud Solution Provider.
+  - **Cost Factors**:
+    - **Resource Types**: Different pricing for Blob vs Table Storage.
+    - **Usage Meters**: CPU time, traffic, disk size.
+    - **Location**: Costs may vary by geo-region.
+  - **Cost Management Tools**:
+    - **Pricing Calculator**: Estimate costs before purchase.
+    - **Cost of Ownership**: Compare on-prem costs to Azure.
+    - **Microsoft Cost Management**: Cost analysis and budgeting.
+
+- **Building a Cloud Governance Strategy**:
+  - **Steps**:
+    1. Define organizational needs (e.g., GDPR compliance).
+    2. Plan governance tools and their implementation.
+    3. Implement governance using management groups, RBAC, policies, tagging, and Azure Blueprints (integrates policies, subscriptions, resources, and RBAC).
+
+### Identity Management
+*(Note: Add specific details from the Microsoft Learn and Pluralsight courses related to Identity management, including Azure Active Directory, roles, and permissions, as you progress.)*
+
+---
+
+## Work in Progress
+
+- Continue to integrate notes from the Microsoft Learn and Pluralsight modules.
+- Expand details on Azure Identity Management.
+- Update study plan based on additional materials and progress.
